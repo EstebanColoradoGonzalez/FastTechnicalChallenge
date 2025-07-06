@@ -10,23 +10,13 @@ public class TextValidator {
 
     private TextValidator() { }
 
-    public static void validateValidLength(String value, int minimumLength, int maximumLength, String message)
-    {
-        if (!NumberValidator.isNumberBetween(value.length(), minimumLength, maximumLength)) {
-            throw new LengthException(message);
+    public static void validateAllowedValue(String value, String[] allowedValues, String message) {
+        for (String allowed : allowedValues) {
+            if (allowed.equalsIgnoreCase(value)) {
+                return;
+            }
         }
-    }
-
-    public static void validateMandatory(String value, String message) {
-        if (isStringEmpty(value)) {
-            throw new ValidateMandatoryException(message);
-        }
-    }
-
-    public static void validateLettersAndSpacesPatternIsValid(String value, String message) {
-        if (!isStringWithLettersAndSpacesPattern(value)) {
-            throw new PatternException(message);
-        }
+        throw new IllegalArgumentException(message);
     }
 
     public static boolean isStringEmpty(String string) {

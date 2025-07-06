@@ -6,6 +6,18 @@ import co.com.ceiba.reto.common.domain.constant.ConstantText;
 public class NumberValidator {
     private NumberValidator() { }
 
+    public static <T extends Number> void validateNumberBetween(T number, T min, T max, String message) {
+        if (ObjectValidator.isNull(number) || !isNumberBetween(number, min, max)) {
+            throw new IllegalArgumentException(message);
+        }
+    }
+
+    public static <T extends Number> void validateNumberGreaterThanOrEqual(T number, T comparatorNumber, String message) {
+        if (!isNumberGreaterThanOrEqual(number, comparatorNumber)) {
+            throw new IllegalStateException(message);
+        }
+    }
+
     public static <T extends Number> boolean isNumberBetween(T number, T lowerLimit, T upperLimit) {
         return isNumberGreaterThanOrEqual(number, lowerLimit) && isNumberLessThanOrEqual(number, upperLimit);
     }

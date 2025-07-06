@@ -27,8 +27,8 @@ public class OrderEntity {
             sequenceName = ConstantText.ORDERS_SEQ,
             allocationSize = 1
     )
-    @Column(name = ConstantText.ORDER_ID)
-    private Long orderId;
+    @Column(name = ConstantText.ID)
+    private Long id;
 
     @Column(name = ConstantText.CUSTOMER_ID,
             nullable = false
