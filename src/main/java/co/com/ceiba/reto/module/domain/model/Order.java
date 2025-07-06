@@ -79,7 +79,7 @@ public class Order {
         return status;
     }
 
-    private void setStatus(OrderStatus status) {
+    public void setStatus(OrderStatus status) {
         ObjectValidator.validateMandatory(status, ConstantMessage.STATUS_IS_MANDATORY);
 
         this.status = status;

@@ -13,7 +13,12 @@ public class ConstantMessage {
     public static final String PAYMENT_METHOD_NOT_ALLOWED = "Medio de pago no permitido";
     public static final String STATUS_IS_MANDATORY = "El estado del pedido es obligatorio";
 
-    public static final String AN_ERROR_OCCURRED_PLEASE_CONTACT_THE_ADMINISTRATOR = "An error occurred, please contact the administrator.";
+    public static final String PRODUCT_NOT_FOUND = "Producto no encontrado en inventario con id ";
+    public static final String INSUFFICIENT_STOCK = "Stock insuficiente para producto con id ";
+    public static final String PAYMENT_FAILED = "Pago con tarjeta de crédito fallido";
+    public static final String ERROR_RESERVING_STOCK = "Error al reservar stock: ";
+
+    public static final String AN_ERROR_OCCURRED_PLEASE_CONTACT_THE_ADMINISTRATOR = "Ocurrió un error, por favor contacte al administrador.";
 
     private ConstantMessage() { }
 }
