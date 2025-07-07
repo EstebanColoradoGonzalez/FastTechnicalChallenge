@@ -21,7 +21,7 @@ public class InventoryMapper {
     }
 
     public Inventory buildModel(InventoryEntity entity) {
-        return new Inventory(
+        return Inventory.build(
                 entity.getProductId(),
                 entity.getStock(),
                 entity.getUnitPrice()

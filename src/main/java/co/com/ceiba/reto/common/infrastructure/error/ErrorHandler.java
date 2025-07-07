@@ -10,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.resource.NoResourceFoundException;
-
 import java.util.concurrent.ConcurrentHashMap;
 
 @ControllerAdvice
@@ -19,9 +18,6 @@ public class ErrorHandler {
     private static final ConcurrentHashMap<String, Integer> CODES_STATE = new ConcurrentHashMap<>();
 
     public ErrorHandler() {
-        CODES_STATE.put(ValidateMandatoryException.class.getSimpleName(), HttpStatus.BAD_REQUEST.value());
-        CODES_STATE.put(LengthException.class.getSimpleName(), HttpStatus.BAD_REQUEST.value());
-        CODES_STATE.put(PatternException.class.getSimpleName(), HttpStatus.BAD_REQUEST.value());
         CODES_STATE.put(InvalidValueException.class.getSimpleName(), HttpStatus.BAD_REQUEST.value());
         CODES_STATE.put(NotFoundException.class.getSimpleName(), HttpStatus.NOT_FOUND.value());
         CODES_STATE.put(NullPointerException.class.getSimpleName(), HttpStatus.BAD_REQUEST.value());

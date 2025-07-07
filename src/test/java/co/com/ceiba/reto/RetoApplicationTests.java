@@ -1,4 +1,4 @@
-package co.com.ceiba.reto.common;
+package co.com.ceiba.reto;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

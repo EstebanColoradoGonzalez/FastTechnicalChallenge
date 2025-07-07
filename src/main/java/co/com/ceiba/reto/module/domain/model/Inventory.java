@@ -10,10 +10,14 @@ public class Inventory {
     private Integer stock;
     private BigDecimal unitPrice;
 
-    public Inventory(Integer productId, Integer stock, BigDecimal unitPrice) {
+    private Inventory(Integer productId, Integer stock, BigDecimal unitPrice) {
         setProductId(productId);
         setStock(stock);
         setUnitPrice(unitPrice);
+    }
+
+    public static Inventory build(Integer productId, Integer stock, BigDecimal unitPrice) {
+        return new Inventory(productId, stock, unitPrice);
     }
 
     public Integer getProductId() {
