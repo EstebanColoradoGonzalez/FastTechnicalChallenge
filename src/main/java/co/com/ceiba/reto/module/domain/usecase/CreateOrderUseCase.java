@@ -36,7 +36,7 @@ public class CreateOrderUseCase {
         boolean paymentSuccess = paymentService.execute(order);
         if (!paymentSuccess) {
             order.setStatus(OrderStatus.FAILED);
-            Long failedOrderId = saveOrderService.execute(order);
+            var failedOrderId = saveOrderService.execute(order);
             order.setId(failedOrderId);
             throw new InvalidValueException(ConstantMessage.PAYMENT_FAILED);
         }
@@ -45,13 +45,13 @@ public class CreateOrderUseCase {
             reserveStockService.execute(order);
         } catch (Exception e) {
             order.setStatus(OrderStatus.FAILED);
-            Long failedOrderId = saveOrderService.execute(order);
+            var failedOrderId = saveOrderService.execute(order);
             order.setId(failedOrderId);
             throw new InvalidValueException(ConstantMessage.ERROR_RESERVING_STOCK + e.getMessage());
         }
 
         order.setStatus(OrderStatus.PAID);
-        Long orderId = saveOrderService.execute(order);
+        var orderId = saveOrderService.execute(order);
         order.setId(orderId);
 
         saveOrderItemsService.execute(order);
