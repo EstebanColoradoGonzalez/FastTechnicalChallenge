@@ -24,5 +24,7 @@ public class ConstantText {
     public static final String ORDERS_SEQ = "orders_order_id_seq";
     public static final String ORDER_ITEMS_SEQ = "order_items_id_seq";
 
+    public static final String ORDERS_API = "/orders";
+
     private ConstantText() { }
 }
