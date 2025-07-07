@@ -2,7 +2,6 @@ package co.com.ceiba.reto.module.infrastructure.adapter.mapper;
 
 import co.com.ceiba.reto.module.domain.model.Order;
 import co.com.ceiba.reto.module.domain.model.OrderStatus;
-import co.com.ceiba.reto.module.domain.model.OrderItem;
 import co.com.ceiba.reto.module.domain.model.PaymentMethod;
 import co.com.ceiba.reto.module.infrastructure.adapter.entity.OrderEntity;
 import org.springframework.stereotype.Component;
@@ -20,7 +19,6 @@ public class OrderMapper {
 
     public OrderEntity buildEntity(Order order) {
         OrderEntity entity = new OrderEntity();
-        entity.setId(order.getId());
         entity.setCustomerId(order.getCustomerId());
         entity.setPaymentMethod(order.getPaymentMethod().name());
         entity.setStatus(order.getStatus().name());
@@ -42,7 +40,6 @@ public class OrderMapper {
         entity.setPaymentMethod(order.getPaymentMethod().name());
         entity.setStatus(order.getStatus().name());
         entity.setTotalAmount(order.getTotalAmount());
-        // Items update handled separately or via cascade
     }
 
     public Order buildModel(OrderEntity entity) {
