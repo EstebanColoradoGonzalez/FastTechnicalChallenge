@@ -19,6 +19,7 @@ public class ConstantMessage {
     public static final String ERROR_RESERVING_STOCK = "Error al reservar stock: ";
 
     public static final String AN_ERROR_OCCURRED_PLEASE_CONTACT_THE_ADMINISTRATOR = "Ocurrió un error, por favor contacte al administrador.";
+    public static final String ORDER_NOT_FOUND = "Orden no encontrada con id: ";
 
     private ConstantMessage() { }
 }

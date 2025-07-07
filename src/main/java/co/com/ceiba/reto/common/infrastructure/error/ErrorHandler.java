@@ -28,6 +28,7 @@ public class ErrorHandler {
         CODES_STATE.put(InvalidValueException.class.getSimpleName(), HttpStatus.BAD_REQUEST.value());
         CODES_STATE.put(NullPointerException.class.getSimpleName(), HttpStatus.BAD_REQUEST.value());
         CODES_STATE.put(NoResourceFoundException.class.getSimpleName(), HttpStatus.NOT_FOUND.value());
+        CODES_STATE.put(IllegalArgumentException.class.getSimpleName(), HttpStatus.BAD_REQUEST.value());
     }
 
     @ExceptionHandler(Exception.class)

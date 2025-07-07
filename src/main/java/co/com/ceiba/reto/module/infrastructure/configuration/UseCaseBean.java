@@ -1,11 +1,13 @@
 package co.com.ceiba.reto.module.infrastructure.configuration;
 
+import co.com.ceiba.reto.module.domain.port.query.OrderQueryRepository;
 import co.com.ceiba.reto.module.domain.service.PaymentService;
 import co.com.ceiba.reto.module.domain.service.ReserveStockService;
 import co.com.ceiba.reto.module.domain.service.SaveOrderItemsService;
 import co.com.ceiba.reto.module.domain.service.SaveOrderService;
 import co.com.ceiba.reto.module.domain.service.VerifyStockService;
 import co.com.ceiba.reto.module.domain.usecase.CreateOrderUseCase;
+import co.com.ceiba.reto.module.domain.usecase.GetOrderUseCase;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -27,5 +29,10 @@ public class UseCaseBean {
                 saveOrderService,
                 saveOrderItemsService
         );
+    }
+
+    @Bean
+    public GetOrderUseCase getOrderUseCase(OrderQueryRepository orderQueryRepository) {
+        return new GetOrderUseCase(orderQueryRepository);
     }
 }

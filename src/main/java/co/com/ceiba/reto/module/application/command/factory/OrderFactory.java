@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @AllArgsConstructor
-public class CreateOrderFactory {
+public class OrderFactory {
     private final InventoryQueryRepository inventoryQueryRepository;
 
     public Order build(CreateOrderCommand command) {
