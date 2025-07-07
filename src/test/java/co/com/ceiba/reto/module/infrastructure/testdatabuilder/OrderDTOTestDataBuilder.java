@@ -2,7 +2,6 @@ package co.com.ceiba.reto.module.infrastructure.testdatabuilder;
 
 import co.com.ceiba.reto.module.application.dto.OrderDTO;
 import co.com.ceiba.reto.module.application.dto.OrderItemDTO;
-
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -15,7 +14,10 @@ public class OrderDTOTestDataBuilder {
 
     public OrderDTOTestDataBuilder() {
         this.orderId = 1L;
-        this.items = List.of(new OrderItemDTOTestDataBuilder().build());
+        this.items = List.of(
+                new OrderItemDTOTestDataBuilder().withProductId(456).withQuantity(2).build(),
+                new OrderItemDTOTestDataBuilder().withProductId(789).withQuantity(1).build()
+        );
         this.totalAmount = BigDecimal.valueOf(450.00);
         this.status = "PAID";
     }

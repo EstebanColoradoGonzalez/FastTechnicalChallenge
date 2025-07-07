@@ -2,7 +2,6 @@ package co.com.ceiba.reto.module.infrastructure.testdatabuilder;
 
 import co.com.ceiba.reto.module.application.command.CreateOrderCommand;
 import co.com.ceiba.reto.module.application.command.CreateOrderItemCommand;
-
 import java.util.List;
 
 public class CreateOrderCommandTestDataBuilder {
@@ -12,7 +11,7 @@ public class CreateOrderCommandTestDataBuilder {
     private String paymentMethod;
 
     public CreateOrderCommandTestDataBuilder() {
-        this.customerId = 123;
+        this.customerId = 1234;
         this.items = List.of(new CreateOrderItemCommandTestDataBuilder().build());
         this.paymentMethod = "CREDIT_CARD";
     }
