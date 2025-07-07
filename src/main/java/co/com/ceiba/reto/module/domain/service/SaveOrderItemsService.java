@@ -13,7 +13,7 @@ public class SaveOrderItemsService {
 
     public void execute(Order order) {
         for (OrderItem item : order.getItems()) {
-            orderItemCommandRepository.save(item);
+            orderItemCommandRepository.save(item, order.getId());
         }
     }
 }
