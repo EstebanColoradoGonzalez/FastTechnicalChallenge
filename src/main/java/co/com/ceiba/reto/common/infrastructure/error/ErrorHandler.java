@@ -1,10 +1,7 @@
 package co.com.ceiba.reto.common.infrastructure.error;
 
 import co.com.ceiba.reto.common.domain.constant.ConstantMessage;
-import co.com.ceiba.reto.common.domain.exception.InvalidValueException;
-import co.com.ceiba.reto.common.domain.exception.LengthException;
-import co.com.ceiba.reto.common.domain.exception.PatternException;
-import co.com.ceiba.reto.common.domain.exception.ValidateMandatoryException;
+import co.com.ceiba.reto.common.domain.exception.*;
 import co.com.ceiba.reto.common.domain.validator.ObjectValidator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,8 +23,10 @@ public class ErrorHandler {
         CODES_STATE.put(LengthException.class.getSimpleName(), HttpStatus.BAD_REQUEST.value());
         CODES_STATE.put(PatternException.class.getSimpleName(), HttpStatus.BAD_REQUEST.value());
         CODES_STATE.put(InvalidValueException.class.getSimpleName(), HttpStatus.BAD_REQUEST.value());
+        CODES_STATE.put(NotFoundException.class.getSimpleName(), HttpStatus.NOT_FOUND.value());
         CODES_STATE.put(NullPointerException.class.getSimpleName(), HttpStatus.BAD_REQUEST.value());
         CODES_STATE.put(NoResourceFoundException.class.getSimpleName(), HttpStatus.NOT_FOUND.value());
+        CODES_STATE.put(IllegalArgumentException.class.getSimpleName(), HttpStatus.BAD_REQUEST.value());
     }
 
     @ExceptionHandler(Exception.class)
