@@ -18,7 +18,7 @@ import java.math.BigDecimal;
 public class OrderItemEntity {
     @Id
     @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
+            strategy = GenerationType.AUTO,
             generator = ConstantText.ORDER_ITEMS_SEQ
     )
     @SequenceGenerator(

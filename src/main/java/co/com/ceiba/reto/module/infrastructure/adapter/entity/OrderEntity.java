@@ -19,7 +19,7 @@ import java.util.List;
 public class OrderEntity {
     @Id
     @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
+            strategy = GenerationType.AUTO,
             generator = ConstantText.ORDERS_SEQ
     )
     @SequenceGenerator(
